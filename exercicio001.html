@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de nacionalidade</title>
+    <style>
+        body{
+            background: rgb(147, 147, 243);
+            color: black;
+            font: normal 15pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificador de Nacionalidade</h1>
+    Digite seu país de origem: <input type="text" name="pais" id="pais">
+    <input type="button" name="verificar" id="verificar" value="Verificar">
+    <div id="result">
+
+    </div>
+    <script>
+        var calc = document.querySelector('input#verificar')
+        calc.addEventListener('click', calcular)
+
+        function calcular(){
+            var pais = document.querySelector('input#pais')
+            var pais1 = pais.value //Importante nomear uma variável com .value para caixas de texto, para que se use o texto escrito na caixa
+            var res = document.querySelector('div#result')
+            if(pais1 == 'Brasil'){
+                res.innerHTML = `<p>Você é <strong>BRASILEIRO</strong></p>` 
+            }else if(pais1 == 'Estados Unidos'){
+                res.innerHTML = `<p>Você é <strong>BURRO</strong></p>`
+            }else{
+                res.innerHTML = `<p>Você é <strong>ESTRANGEIRO</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>

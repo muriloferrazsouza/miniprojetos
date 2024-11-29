@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionais</title>
+    <style>
+        body{
+            background-color: rgb(50, 124, 124);
+            color: black;
+            font: normal 15pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    Velocidade do Carro: <input type="number" name="txtvel" id="txtvel"> KM/H
+    <input type="button" name="verificar" id='verificar' value="Verificar" onclick="clicar()">
+    <div id="result">
+
+    </div>
+    <script>
+        function clicar(){
+            var txtveloc = window.document.querySelector('input#txtvel')
+            var veloc = Number(txtveloc.value)
+            var res = window.document.querySelector('div#result')
+            res.innerHTML = `<p> Sua velocidade atual é de <strong>${veloc} Km/h</strong></p>`
+
+            if (veloc > 50) {
+                res.innerHTML += `<p>O limite de velocidade é de 50 km/h, portanto, você será <strong>MULTADO!</strong></p>`            
+            }else{
+                res.innerHTML += `<p>Lembre-se, o limite de velocidade é de 50km/h, mantenha-se abaixo desse valor para não ser <strong>MULTADO!</strong></p>`
+            }
+
+            res.innerHTML += `<p>Dirija sempre com cinto de segurança!</p>`
+        }
+    </script>
+</body>
+</html>

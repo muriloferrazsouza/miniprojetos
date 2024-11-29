@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body{
+            background-color: red;
+            color: white;
+            font: normal 15pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Começando estudos com DOM</h1>
+    <p>Teste de atualização do live server</p>
+    <p>Aprendendo <strong>DOM</strong></p>
+    <p><strong>DOM</strong> significa Document Object Model e só está presente quando rodando JavaScript no navegador</p>
+    <p>Iremos fazer a árvore <a href="https://www.rodrigobrito.dev.br/storage/images/2021/01/post-1610582137.png" target="_blank">DOM</a> do site</p>
+    <p>Basicamente, o <strong>DOM</strong> é o que dita como o código em JavaScript será escrito (WINDOW . DOCUMENT . BODY) </p>
+    <p>Cada palavra antes do ponto se refere a sua poisção hierárquica no site, em que se começa pelo WINDOW, que se refere á página como um todo, passando para DOCUMENT, que é todo o arquivo que representa a página, seguindo para BODY (ou HEAD), e assim por diante</p>
+    <p>Quando se tem multiplos objetos com mesma tag (como por exemplo esses parágrafos dessa página, em que todos são 'p'), no script é usado o comando 'getElementsByTagName()' para selecionar o correto (sempre lembrando de usar caixa alta) e a contagem é feita a partir do 0 (0 representa o primeiro parágrafo).</p>
+    <p>Também é usado, para facilitar, o 'getElementsById()', que se referencia a QUALQUER tag do HTML, porém você, como usuário, precisa nomear uma TAG ao elemento, como foi feito com a DIV abaixo</p>
+    <p>Alem dessas duas formas, ainda existem o 'getElementsByName()' e 'getElementsByClassName()', que segue a mesma lógica do ID, basta você nomear o elemento no HTML, para puxá-lo usando o JavaScript</p>
+    <div id="tagID" class="tagID" name="tagID">Clique em mim</div></br>
+    <div id="tagIDdois" class="tagIDdois" name="tagIDdois">Porém, por mais que todos esses comandos de .get existam e funcionem, é mais comum, e mais facil, de se usar o Query Selector, como exemplificado na segunda DIV deste código. Ele funciona da mesma forma que os .gets, porém em um só comando, diferenciando ID e classes por '#'' e ''.'</div>
+    </br>
+    <script>
+        var p1 = window.document.getElementsByTagName('p')[1] //o número é usado quando se usa o Element(s), no plural
+        var p2 = window.document.getElementById('tagID') //aqui foi usado o ID do elemento DIV, que foi atribuido com esse ID previamente
+        var p3 = window.document.querySelector('div#tagIDdois') //Exemplo de query selector, como é uma ID, eu usei a '#' para escolher a div correta, caso fosse uma classe, eu usaria o '.'. 
+        window.document.writeln(p1.innerText) //é necessário esse argumento '.innerText' para ele entender que é o conteúdo do parágrafo
+        window.document.writeln(p1.innerHTML) //a diferença desse para o de cima é que este também lerá a TAG STRONG, que deixa parte do texto em negrito
+        p2.style.background = 'white' //aqui, usamos uma forma encurtada de usar o getElementById, em que nomeamos uma variável com a ID e usamos ela no lugar de 'window.document.getElementById()'
+        window.document.getElementById('tagID').style.color = 'black' //aqui, usamos a forma extensa de usar o comando, sem o uso da variável, para mostrar que as duas formas tem o mesmo efeito.
+        p3.style.background = 'pink'
+        p3.style.color = 'black'
+    </script>
+</body>
+</html>

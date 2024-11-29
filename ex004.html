@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex004</title>
+    <style>
+        body{
+            font: normal 15pt Arial; 
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var nome = window.prompt('Qual seu nome?')
+        var n1 = Number(window.prompt('Escolha 1 número'))
+        var n2 = Number(window.prompt('Escolha outro número'))
+        var soma = n1 + n2
+        var subt = n1 - n2
+        document.writeln(`<h1>Olá ${nome}! Seu nome tem ${nome.length} letras.</h1>`)
+        document.writeln(`Seu nome em maiúsculas é ${nome.toUpperCase()}`) //Converte todo texto em maiúsculo
+        document.writeln(`</br>Seu nome em maiúsculas é ${nome.toLowerCase()}`) //Converte todo texto em minúsculo
+        document.writeln(`</br>A soma entre ${n1} e ${n2} é de ${soma} e a subtração é de ${subt}`)
+
+        /* .toFixed(2) serve para padronizar quantidade de casas decimais em um número(neste caso para duas casas)
+        .replace(',', '.')(serve para fazer a troca de algum caractere, por outro. Muito usado para substituir virgulas e pontos quando quiser marcar casas decimais (se coloca o que quer trocar nas primeiras aspas, depois uma virgula, e outras aspas com o caractere novo))
+        .toLocaleString('pt-br', {style:'currency', currency:'BRL'}) serve para transformar qualquer número digitado, em valor monetário, com o simbolo do Real no começo do número
+        
+        */
+
+        /* Simbolo de '%', para contas, significa que o resultado da operação será o RESTO da divisão, e não a porcentagem do número
+        n += 2 (Serve para funções em que a variavel sera atualizada por uma conta com ela mesma(n = n + 2 => n += 2))*/
+        /* n++ (Mesma coisa de que n += 2, porém para quando a soma for com o número 1, apenas)
+        para operações relacionais (<, >, <=, >=, ==, ===, !=), os resultados das operações serão sempre (true) ou (falso)
+        o sinal '==' apenas compara grandezas, então ele retorna 5 == '5' como true, pois por mais que sejam de tipos diferentes, possuem a mesma grandeza
+        Para comparar se dois valores são IDENTICOS, se usa '===', que ai sim ele retornaria 5 === '5' como false
+
+        Operadores lógicos são (! negação), (&& conjunção) (|| disjunção)
+        negação(!) serve para negar afirmações, seja ela verdadeira ou falsa, ela inverte o valor booleano (!5 = qualquer número menos 5)
+        conjunção (&&) serve para comparar duas afirmações, e só retorna true se as duas afirmações forem verdadeiras
+        disjunção (||) serve para comparar duas afirmações, porém, diferente da conjunção, basta uma delas for verdadeira, ela ja retorna como true
+
+        Operador ternário, serve para testar afirmações, e dependendo do resultado, dar uma de duas respostas.
+        'teste ? true : false' -> média <= 6 ? Reprovado (caso true): Aprovado (caso false)
+        Serve para atribuir valor à variáveis (segue exemplo):
+
+        var idade = 18
+        var maioridade = idade >= 18 ? 'Maior': 'Menor'
+
+        Significa que a variavel 'maioridade' receberá 'Maior' como resposta, pois a idade é igual a 18 anos, e essa resposta ficará armazenada na variável
+        */
+    </script>
+</body>
+</html>

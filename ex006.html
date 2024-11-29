@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        body{
+            background:rgb(155, 155, 238);
+            font: normal 15pt Arial;
+        }
+        div#area{
+            background: rgb(231, 66, 66);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            float: left;
+        }
+        div#area2{
+            background: rgb(231, 66, 66);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            float: right;
+        }
+        div#vazia{
+            background: rgb(155, 155, 238);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            float: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"> <!--Este onclick serve para nomear a função para o javascript, assim ele consegue chamar essa ação e executar o bloco de código-->
+        Interaja...
+    </div>
+    <div id="area2">
+        Interaja...
+    </div>
+    <div id="vazia">
+
+    </div>
+    <p>Existem diversos eventos de DOM, que podem ser feitos. Para citar alguns exemplos, podem ocorrer alguns apenas com movimentos de mouse. Caso o mouse entre em uma DIV que tenha esses eventos configurados, pode ocorrer o 'mouseenter', ou para sair o 'mouseout', o clique do mouse 'click', e o mexer do mouse 'mousemove'</p>
+    <p>Para uma lista de todos os eventos possíveis, pesquise no google por 'JavaScript DOM event list' ou clique <a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank">aqui</a> </p>
+    <p>Para tratar esses eventos, é necessário a utilização de funções. Para usar funções, você cria um bloco de código (que pode ter qualquer número de linhas), e o coloca dentro de colchetes. Você nomea esse colchete como 'function' seguida de seu nome, como exemplificado na seção de script desta página</p>
+    <p>Em contrapartida, também é possivel fazer sem nomeá-los diretamente na div, como feito no primeiro quadrado, pois existe uma função no JavaScript chamada de 'EventListener', e ele é configurado diretamente no script, como visto para o segundo quadrado</p>
+    <p>Caso não funcione, lembre-se de verificar no 'Inspecionar Elemento', na parte do console do navegador, para ver se encontra a referência de onde possa estar o erro.</p>
+
+    <script>
+        var a = window.document.querySelector('div#area')
+        var b = window.document.querySelector('div#area2')
+        b.addEventListener('click', clicar1) //para os EventListener, não é necessário adicionar os parênteses no final do nome da função
+        b.addEventListener('mouseenter', entrar1)
+        b.addEventListener('mouseout', sair1)
+
+        function clicar(){
+            a.innerText = 'Clicou!!'
+            a.style.background = 'green'
+        }
+
+        function entrar(){
+            a.innerText = 'CLIQUE!!!'
+        }
+
+        function sair(){
+            a.innerText = 'Interaja...'
+            a.style.background =  'rgb(231, 66, 66)'
+        }
+
+        function clicar1(){
+            b.innerText = 'Clicou!!'
+            b.style.background = 'green'
+        }
+
+        function entrar1(){
+            b.innerText = 'CLIQUE!!!'
+        }
+
+        function sair1(){
+            b.innerText = 'Interaja...'
+            b.style.background =  'rgb(231, 66, 66)'
+        }
+    </script>
+</body>
+</html>
